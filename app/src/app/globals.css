@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* ============================================================
+   URBAN PULSE – Design Token System for Tailwind CSS v4
+   "Noir-Premium" dark aesthetic with electric yellow accents
+   ============================================================ */
+
+@theme inline {
+  /* ── Color Palette ────────────────────────────────────── */
+  --color-background: #0e0e0e;
+  --color-surface: #0e0e0e;
+  --color-surface-dim: #0e0e0e;
+  --color-surface-bright: #2c2c2c;
+  --color-surface-container-lowest: #000000;
+  --color-surface-container-low: #131313;
+  --color-surface-container: #1a1919;
+  --color-surface-container-high: #201f1f;
+  --color-surface-container-highest: #262626;
+  --color-surface-variant: #262626;
+  --color-surface-tint: #fed74c;
+
+  --color-primary: #fed74c;
+  --color-primary-dim: #efc93f;
+  --color-primary-container: #bf9d09;
+  --color-primary-fixed: #fed74c;
+  --color-primary-fixed-dim: #efc93f;
+
+  --color-on-background: #ffffff;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #adaaaa;
+  --color-on-primary: #5d4b00;
+  --color-on-primary-container: #2b2200;
+  --color-on-primary-fixed: #473800;
+
+  --color-secondary: #e3e2e2;
+  --color-secondary-dim: #d4d4d4;
+  --color-secondary-container: #464747;
+  --color-secondary-fixed: #e3e2e2;
+  --color-on-secondary: #515252;
+  --color-on-secondary-container: #d0d0d0;
+
+  --color-tertiary: #f7ffbc;
+  --color-tertiary-dim: #d5e75e;
+  --color-tertiary-container: #e3f66b;
+  --color-tertiary-fixed: #e3f66b;
+
+  --color-error: #ff7351;
+  --color-error-dim: #d53d18;
+  --color-error-container: #b92902;
+  --color-on-error: #450900;
+  --color-on-error-container: #ffd2c8;
+
+  --color-outline: #767575;
+  --color-outline-variant: #484847;
+
+  --color-inverse-surface: #fcf9f8;
+  --color-inverse-primary: #725d00;
+  --color-inverse-on-surface: #565555;
+
+  /* ── Typography ───────────────────────────────────────── */
+  --font-headline: "Epilogue", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  /* ── Border Radius ────────────────────────────────────── */
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+/* ── Base Layer ─────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* ── Custom Scrollbar ───────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fed74c;
+}
+
+/* ── Material Symbols ───────────────────────────────────── */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(254, 215, 76, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(254, 215, 76, 0.6);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }

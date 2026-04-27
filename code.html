@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Froth and Friends | The Urban Pulse</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#464747",
+                    "tertiary-fixed": "#e3f66b",
+                    "primary-container": "#bf9d09",
+                    "on-error-container": "#ffd2c8",
+                    "surface-container-highest": "#262626",
+                    "error-dim": "#d53d18",
+                    "surface-container-high": "#201f1f",
+                    "tertiary-container": "#e3f66b",
+                    "on-error": "#450900",
+                    "surface-container-lowest": "#000000",
+                    "surface-bright": "#2c2c2c",
+                    "primary-fixed": "#fed74c",
+                    "on-secondary-fixed": "#3e3f40",
+                    "on-secondary": "#515252",
+                    "on-primary-fixed-variant": "#685400",
+                    "error-container": "#b92902",
+                    "surface-tint": "#fed74c",
+                    "surface": "#0e0e0e",
+                    "on-tertiary-fixed": "#404900",
+                    "error": "#ff7351",
+                    "outline": "#767575",
+                    "secondary-fixed": "#e3e2e2",
+                    "surface-variant": "#262626",
+                    "primary-dim": "#efc93f",
+                    "on-background": "#ffffff",
+                    "secondary-fixed-dim": "#d4d4d4",
+                    "background": "#0e0e0e",
+                    "secondary": "#e3e2e2",
+                    "secondary-dim": "#d4d4d4",
+                    "on-tertiary-fixed-variant": "#5b6700",
+                    "inverse-surface": "#fcf9f8",
+                    "inverse-primary": "#725d00",
+                    "on-surface": "#ffffff",
+                    "outline-variant": "#484847",
+                    "inverse-on-surface": "#565555",
+                    "tertiary-fixed-dim": "#d5e75e",
+                    "surface-container": "#1a1919",
+                    "on-primary-container": "#2b2200",
+                    "primary-fixed-dim": "#efc93f",
+                    "on-secondary-fixed-variant": "#5a5c5c",
+                    "tertiary-dim": "#d5e75e",
+                    "on-primary": "#5d4b00",
+                    "on-secondary-container": "#d0d0d0",
+                    "surface-container-low": "#131313",
+                    "surface-dim": "#0e0e0e",
+                    "on-surface-variant": "#adaaaa",
+                    "on-tertiary": "#596500",
+                    "on-tertiary-container": "#525c00",
+                    "on-primary-fixed": "#473800",
+                    "primary": "#fed74c",
+                    "tertiary": "#f7ffbc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Epilogue", "sans-serif"
+                    ],
+                    "body": [
+                            "Inter", "sans-serif"
+                    ],
+                    "label": [
+                            "Inter", "sans-serif"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for a darker aesthetic */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fed74c; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased selection:bg-primary selection:text-surface">
+<!-- TopNavBar Component -->
+<nav class="sticky top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-lg bg-surface-container-low shadow-[0px_0px_15px_rgba(254,215,76,0.15)] flex justify-between items-center px-6 md:px-12 py-5">
+<div class="text-2xl font-black text-[#fed74c] tracking-tighter font-headline uppercase">
+            Froth and Friends
+        </div>
+<div class="hidden md:flex space-x-8 items-center font-headline uppercase tracking-tighter text-sm">
+<!-- Active State: Home -->
+<a class="text-[#fed74c] border-b-2 border-[#fed74c] pb-1 hover:text-[#fed74c] hover:drop-shadow-[0_0_8px_rgba(254,215,76,0.6)] transition-all active:scale-95 duration-200" href="#">Home</a>
+<a class="text-zinc-400 hover:text-[#fed74c] hover:drop-shadow-[0_0_8px_rgba(254,215,76,0.6)] transition-all active:scale-95 duration-200" href="#">Menu</a>
+<a class="text-zinc-400 hover:text-[#fed74c] hover:drop-shadow-[0_0_8px_rgba(254,215,76,0.6)] transition-all active:scale-95 duration-200" href="#">Gallery</a>
+<a class="text-zinc-400 hover:text-[#fed74c] hover:drop-shadow-[0_0_8px_rgba(254,215,76,0.6)] transition-all active:scale-95 duration-200" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary font-headline uppercase tracking-tight px-6 py-2.5 rounded-md hover:shadow-[0px_0px_15px_rgba(254,215,76,0.5)] transition-all active:scale-95 duration-200 text-sm hidden md:block">
+            Order Now
+        </button>
+<!-- Mobile Menu Trigger (Visual only for design) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[921px] flex items-center justify-center overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="hero background" class="w-full h-full object-cover opacity-60" src="https://lh3.googleusercontent.com/aida/ADBb0uh5ZhWKS1lOmsaRTlzVUBYfcIMW9CiCK_Ea_R7t6g7tQJlU38z0b9VP96bZrsmy3t4-Fo7Bf3SQsxIe4IJWD8zbC5MaMRmrobQ4kRrIyInENIT-Efn8DVQ264mmhlLiaL_v_yUlplRSXrehdn7_p1ZfZ-cPWQWqATTGKA5OMMdLobt8aZWpGs6eNg3QADc_zBhBengdq83eAGc45hQZfqMxCzgUnxBBWegagHJqVv8EzwcShZn20uZMyOAB7nM3sfr_Bz3EfkFQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-surface/40"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center">
+<!-- Optional Logo Injection -->
+<img alt="Froth and Friends Logo" class="w-32 h-32 object-contain mb-8 opacity-95 drop-shadow-[0_0_20px_rgba(254,215,76,0.4)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5d0cGslz4JlMV52xxpinSJVyWUQy07SA3xkZoPJZ6u8xWN8dFTGxw_tHxWBY6AbYo757TWAbUIxo2c3tRGW0EAxxYcI3K-1CPHWsuMFl7SG3-IEvMHXyOKKRnC5C3ZOcK3s8QeLmIMtFNHI6q3h1MLepi_ISq_CyDEm3yxWaP1miu4lx9Fi2L1UVkri9bLRtGrFK11mWOEWDP1N_1lOyMXsJqXX_R41iau1ZTJECO_hett1BhgAEerLZJBXSHC-ks_Wnu2YamuRQ"/>
+<h1 class="font-headline text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter text-on-surface leading-[0.9] mb-6 drop-shadow-2xl">
+                Sip. <span class="text-primary block md:inline">Chill.</span> Repeat.
+            </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface max-w-2xl mx-auto mb-10 font-medium tracking-wide drop-shadow-md">
+                Vijayawada’s most aesthetic café experience.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline uppercase tracking-tight px-8 py-4 rounded-md text-lg hover:shadow-[0px_0px_24px_rgba(254,215,76,0.6)] transition-all active:scale-95">
+                    Explore Menu
+                </button>
+<button class="border border-outline-variant/30 bg-surface-container-highest/50 backdrop-blur-md text-on-surface font-headline uppercase tracking-tight px-8 py-4 rounded-md text-lg hover:border-primary/50 hover:text-primary transition-all active:scale-95">
+                    Visit Us
+                </button>
+</div>
+</div>
+</header>
+<!-- About Section (Asymmetric Layout) -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 flex flex-col items-start">
+<div class="flex items-center space-x-2 mb-6 bg-surface-container-low px-4 py-2 rounded-full border border-white/5">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline font-bold text-lg">4.8</span>
+<span class="text-on-surface-variant text-sm">Rating</span>
+</div>
+<h2 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-tight">
+                    The Vibe <br/><span class="text-outline">Is Real.</span>
+</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                    Step into a sanctuary of dark aesthetics and neon warmth. We serve more than just coffee; we serve an experience. With highly Instagrammable interiors and a menu designed to delight, this is where Vijayawada comes to hang out, date, and unwind.
+                </p>
+<button class="text-primary font-headline uppercase tracking-tight font-bold hover:drop-shadow-[0_0_8px_rgba(254,215,76,0.6)] transition-all border-b border-primary pb-1">
+                    Read Our Story
+                </button>
+</div>
+<div class="lg:col-span-7 relative">
+<div class="aspect-[4/3] rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<img alt="Cafe Interior" class="w-full h-full object-cover" data-alt="moody high end cafe interior with dark walls warm pendant lighting and textured concrete surfaces" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbeNaiJScjLKAQS6-Aq2eTq7e2BMg0AWkRFvwrwuZazIdMIhZ4H__5JAjzoaaIHD2gp9HWw12op5VCZ9yV0j6bfcYjhNLYsA4QCMfKUZraIyRitqRU6KhYE-5yd_Tnxrz0jtni4ad522jSRzDeAb5zTXN-kyWC9HL5iovxr2ceOpTLQGSmE8m_ML6Wzgp1SbH9L-Pw1UnjBlNEZcQCVBJUbVdMwv3SypOAFdQFCJVDQG8HilSWlc2rqLxBrx-WOsZfk-jHkCCwOyw"/>
+</div>
+<!-- Floating Element -->
+<div class="absolute -bottom-8 -left-8 bg-surface-variant/80 backdrop-blur-xl p-6 rounded-xl border border-white/10 hidden md:block">
+<p class="font-headline font-bold text-xl uppercase tracking-tighter">Est. 2024</p>
+<p class="text-primary text-sm">Vijayawada, AP</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Menu Highlights (Bento Grid) -->
+<section class="py-24 px-6 md:px-12 bg-surface-dim">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-16">
+<h2 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none">
+                    Menu<br/><span class="text-primary">Highlights</span>
+</h2>
+<button class="hidden md:flex items-center space-x-2 text-primary font-headline uppercase tracking-tight text-sm hover:drop-shadow-[0_0_8px_rgba(254,215,76,0.6)] transition-all">
+<span>View Full Menu</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Feature Card -->
+<div class="md:col-span-2 aspect-square md:aspect-[2/1] relative rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Pizza" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close up of artisan pizza on dark slate background dramatic side lighting with steam rising" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnUDLOQTNESINBJ83rl_kNCqEotK9-kwn6dTLwebV-_9ydIiE5ldG88VNak1NGremXQyyHVHbGC-EYMmmS5FOpVq1R5hoUFp3aBPF3EVQrJ-p5Cwje95v6K3kCcWY6776x4mDrDXgg41aXIfcATJhADYv1ooJiTuoQj8AQ6f9w9e_6K4XPiALUnDqra-KqFO9KO85Ep-7bI48o78Ro4kMPuoZKi4SCHTAsAIBneOUZCQPseoIY-NfpSi7-d8ADG_M2tevxUdUaVoA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 bg-surface-bright/60 backdrop-blur-md p-6 rounded-lg border border-white/10">
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight mb-1">Woodfired Pizza &amp; Pasta</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Authentic recipes, bold flavors. Perfect for sharing.</p>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="aspect-square relative rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Paneer Poppers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="crispy golden paneer poppers in a dark ceramic bowl with spicy dipping sauce dramatic spotlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACp6bwF2pXNe5WI5yaBC3DHyJpvpwJnpc0Secq-p0IawjCDNF4DS-aQaEKdv990ts8pZAmjIenmyDbx_hl45zCwYkWolgZP7KTAgF2fWKZKpOROhk_YFyo6qCvOtzHdxzDhyQw1ubVFVko1LW2Ssg-RWqLSF7ysh47sb9_OltP8pKJhRVGJF-7lycbIcwCdT2q3S40aDAVY6RU7HeviukIWpKPCJGc0dA9raiUD4VOA4aZxUbtrwDbrEWWEbYN3qEXIIIBpOb9c20"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 via-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<span class="text-tertiary text-xs font-bold uppercase tracking-wider mb-2 block">Must Try</span>
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Crispy Paneer Poppers</h3>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="aspect-square relative rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Coffee" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="steaming cup of artisanal coffee with latte art on a dark textured wooden table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMxfAVcZsIzC4WL3Rd-PTci7J141ZjngxnHqpOhNnuPPmdpB4AL-nQLEQpgEMf551sOOCjPUQ-iOx0DjDEb8YZtmgC0n8DIChWO0Ri8c_BN3FozVrPtOPcgQYX2rbvDRCj6YeaQx1E6RpzzgDa9mGps4IfDu0GiMQ6Mn8DpXZTX3_ffIPR6veEWqdvJYNEjlAHWTQbIMFN0E9MRe5bpkOHEYw1WXj2lx2OlQcNezXoajsNPcNKlSsXJ4a2wqkz6XSlGriLkA5sm_0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 via-surface/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<h3 class="font-headline text-xl font-bold uppercase tracking-tight">Artisan Coffee</h3>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-2 aspect-square md:aspect-[2/1] relative rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Burger" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="gourmet burger with dripping cheese and dark moody background studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvgkdzLas8QXGIj4pJmeD08G601pYcmpf-kVqUImTTUlCM3y2r9iN-9Ut3jex4gBSJeQ9S0M9CyNUOyMNbgG8B96pD3mFB-dGlVpAOjOdLNAjwg5Uw7k-UtAsFy0w8oBRec17ZqAoBYFVYYeNC_RoaEdwkVJEOWFjVwtZEB2shoY1a6d1mkTzDnn6T3GFtO0RWjEcz68JcWs0GtKis-83fsTPmZjh8KL-8cHDFSiq-2-Z5f4qJbyzYUOyy5y67Aol9lEyC-BjyhS4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 bg-surface-bright/60 backdrop-blur-md p-6 rounded-lg border border-white/10">
+<span class="text-tertiary text-xs font-bold uppercase tracking-wider mb-2 block">Signature</span>
+<h3 class="font-headline text-2xl font-bold uppercase tracking-tight mb-1">Gourmet Burgers</h3>
+<p class="text-on-surface-variant text-sm">Juicy, messy, and absolutely unforgettable.</p>
+</div>
+</div>
+</div>
+<button class="mt-8 md:hidden w-full text-center text-primary font-headline uppercase tracking-tight text-sm border border-primary py-4 rounded-md">
+                View Full Menu
+            </button>
+</div>
+</section>
+<!-- Why Choose Us & Events Split -->
+<section class="py-24 px-6 md:px-12 bg-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+<!-- Why Us -->
+<div>
+<h2 class="font-headline text-4xl md:text-5xl font-black uppercase tracking-tighter mb-10">
+                    More Than <br/>A Cafe.
+                </h2>
+<div class="space-y-8">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-colors">
+<div class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-primary text-3xl">celebration</span>
+<div>
+<h4 class="font-headline text-xl font-bold uppercase tracking-tight mb-2">The Ultimate Hangout</h4>
+<p class="text-on-surface-variant text-sm">Whether it's a date night or chilling with your crew, our vibe sets the perfect mood.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-colors">
+<div class="flex items-start space-x-4">
+<span class="material-symbols-outlined text-primary text-3xl">payments</span>
+<div>
+<h4 class="font-headline text-xl font-bold uppercase tracking-tight mb-2">Premium yet Accessible</h4>
+<p class="text-on-surface-variant text-sm">Experience luxury without the heavy price tag. Approx ₹600 for two.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Events -->
+<div class="relative rounded-xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
+<img alt="Painting Workshop" class="w-full h-full object-cover absolute inset-0 transition-transform duration-1000 group-hover:scale-105" data-alt="people painting on canvases in a dimly lit cafe setting creative moody atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWaWUPs_IPYN7bZAaEj9oxQvHmGVgUj-ncUFg2KNa6IxoqrQBVZgZiACjDF0E-SUyDXjNTOHUtUwLaxZ-Mq4H9IXrM5n9dHkb1hv9E-TORfSbs2xfd3pc6Zgewp9AL28Jq9WXVAvKLhU8ftAYD-_1hZkYvMxUMB93aFKe-77KEg2CKkB3vODW2nTIxUqbv-JM580XniDjiubW0Q7kYj9pPb8Gq-bmR19fDI9hAhpQKYr12CmZsi2KBvC5auRjyz3ZDJuRaghqRgOQ"/>
+<div class="absolute inset-0 bg-surface/60 group-hover:bg-surface/40 transition-colors duration-500"></div>
+<div class="relative h-full min-h-[400px] flex flex-col justify-end p-8">
+<span class="bg-primary text-surface font-bold text-xs uppercase px-3 py-1 rounded-sm w-max mb-4">Upcoming Event</span>
+<h3 class="font-headline text-4xl font-black uppercase tracking-tighter mb-2">Sip &amp; Paint Workshops</h3>
+<p class="text-on-surface-variant mb-6 max-w-sm">Unleash your creativity. Join our weekend painting workshops. Coffee, canvas, and good vibes included.</p>
+<button class="w-max border-b-2 border-primary text-primary font-headline uppercase tracking-tight pb-1 hover:drop-shadow-[0_0_8px_rgba(254,215,76,0.6)] transition-all">
+                        Reserve Your Spot
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Explore the Ambiance Section -->
+<section class="py-24 px-6 md:px-12 bg-[#0e0e0e] border-y border-[#fed74c]/20 relative overflow-hidden">
+<!-- Gold accent glow -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-1 bg-gradient-to-r from-transparent via-[#fed74c] to-transparent opacity-50"></div>
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4 text-on-surface">
+                Explore The <span class="text-[#fed74c]">Ambiance</span>
+</h2>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl mx-auto font-light tracking-wide">
+                Immerse yourself in our cozy, Instagram-worthy spaces designed for unforgettable moments.
+            </p>
+</div>
+<div class="relative rounded-2xl overflow-hidden shadow-[0_0_40px_rgba(254,215,76,0.15)] ring-1 ring-[#fed74c]/30">
+<img alt="Cafe Interior Ambiance Gallery" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugtNn9_o7Don0_o79dyeAqJJzSR8HEKs349z3EWM4TqBnpz95cxa_lnehw_dn7MVNPBShKIvKbMD2Qm9WwfCra2WdZGBEs4SyGlhz3B0-s5jnlS94WleaCX0HoMUZTpbUi9c8xvP-E4iGnaOWgNhf44IhsM3Qwanbjk9XwDzxbTpJ1QI_K9Wh0P_Aut57WkkeMn1It-Qua5e__vjnzYlarlcGgrMMCWO08YWnbp7qioiBVpZQmlFZMPM8xYlLvhAEpRkDDByThQqA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0e0e0e]/80 via-transparent to-transparent pointer-events-none"></div>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="border border-[#fed74c]/50 text-[#fed74c] font-headline uppercase tracking-tight px-8 py-4 rounded-md text-lg hover:bg-[#fed74c] hover:text-[#0e0e0e] transition-all active:scale-95 duration-300">
+                Book a Table
+            </button>
+</div>
+</div>
+</section>
+<!-- Gallery (Insta Grid) -->
+<section class="py-24 px-1 md:px-6 bg-surface-dim overflow-hidden">
+<div class="text-center mb-12">
+<h2 class="font-headline text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">Follow The Pulse</h2>
+<p class="text-on-surface-variant">@froth_and_friends</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 max-w-screen-2xl mx-auto">
+<!-- Grid Items -->
+<div class="aspect-square relative group overflow-hidden bg-surface-container">
+<img alt="Gallery" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="aesthetic overhead shot of coffee and pastry on dark textured table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrNh8xZE__XAiKuWLESAspdSA-arNORL2fqDJhrZ_X_ZOOq9t2AKVyTarHYBOKWk2Qt59U7NOC57s6HCOOOhf1ZM_Yvk-rJqpNKFsL4jDFSc5BZO19bY1W0vybdhAL3io2xYO5bunRAIxHUtxQCfyGlfeWuebv_wI1b30xWGl7MAGOySqz5snlWD4iAtw7SMNQzA3flCvmfUbJ5oBPmXCsHz6bCe-ndD7A3qvgaQBtAMkNil5fkViJf1i6d8_9Z7fQOxtIPGKnZM8"/>
+<div class="absolute inset-0 border-2 border-transparent group-hover:border-primary group-hover:shadow-[inset_0_0_20px_rgba(254,215,76,0.4)] transition-all duration-300 z-10 pointer-events-none"></div>
+</div>
+<div class="aspect-square relative group overflow-hidden bg-surface-container">
+<img alt="Gallery" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="neon sign glowing in dark cafe interior urban moody vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1BexuiVnvZ1dnkVqs-v3768FaYE-oQkClYSzcqhKVSm06yPhPAuc2zd0FZfm_msoBoNfDeClx1-J-bCZogA6clHEykzmkldJi8KUokxF6Y_xLyLa0925Ui8_QfMh5zvCWFRdvUsEYepOHUCe77GbaKvoacQl9BxlIdA3aD_tulhPNBUD0GkdOw8-hbXibTD7IT6o2qL5wqWi25KvIEFtXcZBIIesZozSNEmgtMog5Xzc4wvLMHz3exnoaZDGkAorPguTYju3TV7I"/>
+<div class="absolute inset-0 border-2 border-transparent group-hover:border-primary group-hover:shadow-[inset_0_0_20px_rgba(254,215,76,0.4)] transition-all duration-300 z-10 pointer-events-none"></div>
+</div>
+<div class="aspect-square relative group overflow-hidden bg-surface-container">
+<img alt="Gallery" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="close up of creamy pasta dish with dark background gourmet plating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUHMHr6wVK5a3zYYC-Oq7YTasS6LJ-1E38P5NVp0CG0U5b61pgq3uDqjPiw3D5Enx1nn8Zzhi7q43lLc_mIAJgivgIS23gBU4GxUzB3ICNf4u4kRqPi3hfiY8zgulvjERcPfKUF_pmhVRUUvwFGLmyWd0bmB-TU9eJ3AbAcADEiiTI07swkz5uMdbD6iZV8tmUC3pvUoqdjhHpJEeFzUBtrn5iX4zbq9idgzehk01M-JX_kRReZyK6QmxXmAuKl2DIf4izSOBlnPI"/>
+<div class="absolute inset-0 border-2 border-transparent group-hover:border-primary group-hover:shadow-[inset_0_0_20px_rgba(254,215,76,0.4)] transition-all duration-300 z-10 pointer-events-none"></div>
+</div>
+<div class="aspect-square relative group overflow-hidden bg-surface-container">
+<img alt="Gallery" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="friends laughing at a cafe table at night warm intimate lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeFh_ZQ-oAEK5daSUmLedlr9SxceULLqae1IAV8HiAn5bqy4io3CPbhYKjLnsHiAE2O4hkFdAGW_6z354eBv5AOKVSKKzKTEiIPvwQi3FK0x8-PYYuLBJV7XhcXfW6jGJTPfrxJasfYNO_VnW0vsQYq-T2TX6IFPS-mE65_cujARPv9Gxu3gObT67W51A71-hvVNrbLmZwPrVkHJEFgZftZo6FyW37h7eSOAKGAXVJHQ96q7R-OtcYn7qgZ3tMY2WkKl35Eev9aaU"/>
+<div class="absolute inset-0 border-2 border-transparent group-hover:border-primary group-hover:shadow-[inset_0_0_20px_rgba(254,215,76,0.4)] transition-all duration-300 z-10 pointer-events-none"></div>
+</div>
+</div>
+</section>
+<!-- Order & Actions Section -->
+<section class="py-32 px-6 bg-surface relative overflow-hidden">
+<!-- Abstract gradient blob for background texture -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter mb-12">
+                Craving <span class="text-primary">Now?</span>
+</h2>
+<div class="flex flex-col md:flex-row justify-center gap-6">
+<button class="bg-surface-container-high border border-outline-variant/30 text-on-surface font-headline uppercase tracking-tight px-8 py-5 rounded-md text-lg hover:border-primary hover:text-primary transition-all flex items-center justify-center space-x-3 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">delivery_dining</span>
+<span>Order on Swiggy</span>
+</button>
+<button class="bg-surface-container-high border border-outline-variant/30 text-on-surface font-headline uppercase tracking-tight px-8 py-5 rounded-md text-lg hover:border-primary hover:text-primary transition-all flex items-center justify-center space-x-3 group">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">restaurant</span>
+<span>Order on Zomato</span>
+</button>
+<button class="bg-primary text-on-primary font-headline uppercase tracking-tight px-8 py-5 rounded-md text-lg hover:shadow-[0px_0px_24px_rgba(254,215,76,0.6)] transition-all flex items-center justify-center space-x-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event_seat</span>
+<span>Book a Table</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Footer Component Integration -->
+<footer class="w-full py-12 px-6 md:px-12 border-t border-white/5 bg-[#0e0e0e] grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+<!-- Brand -->
+<div class="flex flex-col items-start">
+<div class="text-xl font-black text-[#fed74c] uppercase font-headline tracking-tighter mb-4">
+                Froth and Friends
+            </div>
+<p class="font-['Inter'] text-sm tracking-wide text-zinc-500 mb-6">
+                © 2024 Froth and Friends Café. The Urban Pulse.
+            </p>
+<div class="flex space-x-4">
+<a class="text-zinc-500 hover:text-[#fed74c] transition-colors opacity-80 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">map</span>
+</a>
+<a class="text-zinc-500 hover:text-[#fed74c] transition-colors opacity-80 hover:opacity-100" href="#">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+</div>
+<!-- Links -->
+<div class="flex flex-col space-y-3">
+<h4 class="font-headline text-on-surface uppercase tracking-tight text-sm font-bold mb-2">Explore</h4>
+<a class="font-['Inter'] text-sm tracking-wide text-zinc-500 hover:text-[#fed74c] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-sm tracking-wide text-zinc-500 hover:text-[#fed74c] transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-sm tracking-wide text-zinc-500 hover:text-[#fed74c] transition-colors opacity-80 hover:opacity-100" href="#">Location</a>
+<a class="font-['Inter'] text-sm tracking-wide text-zinc-500 hover:text-[#fed74c] transition-colors opacity-80 hover:opacity-100" href="#">Careers</a>
+</div>
+<!-- Contact Quick Info -->
+<div class="flex flex-col space-y-3">
+<h4 class="font-headline text-on-surface uppercase tracking-tight text-sm font-bold mb-2">Visit Us</h4>
+<p class="font-['Inter'] text-sm tracking-wide text-zinc-500">Vijayawada, Andhra Pradesh</p>
+<p class="font-['Inter'] text-sm tracking-wide text-zinc-500">Open Daily: 11 AM - 11 PM</p>
+</div>
+</footer>
+<!-- Floating WhatsApp FAB -->
+<a class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform flex items-center justify-center" href="#">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
+</body></html>
